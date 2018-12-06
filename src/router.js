@@ -19,7 +19,7 @@ export default new Router({
     {
       path: "/dashboard",
       name: "dashboard",
-      component: Dashboard,
+      component: Dashboard
     },
     {
       path: "/dashboard/food",
