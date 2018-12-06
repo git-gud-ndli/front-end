@@ -1,0 +1,12 @@
+[ignore]
+<PROJECT_ROOT>/node_modules/npm
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+
+[strict]
