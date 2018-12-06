@@ -1,21 +1,20 @@
 <template>
   <section class="dashboard text-xs-center">
     <router-view></router-view>
-    <h1 class="display-4">
-      {{ $vuetify.t("$vuetify.dashboard.welcome") }}
-    </h1>
+    <h1 class="display-4">{{ $vuetify.t("$vuetify.dashboard.welcome") }}</h1>
     <v-container grid-list-lg text-xs-center>
       <v-layout row wrap>
-        <v-flex v-for="(tile, key) in tiles" :key="key" xs4>
+        <v-flex v-for="(tile, key) in tiles" :key="key" xs12 sm4>
           <v-hover>
             <v-card
               slot-scope="{ hover }"
               class="text-xs-center"
               :class="`elevation-${hover ? 12 : 2}`"
             >
-              <v-card-title primary-title class="display-3 justify-center">
-                {{ $vuetify.t(tile.title) }}
-              </v-card-title>
+              <v-card-title
+                primary-title
+                class="display-3 justify-center"
+              >{{ $vuetify.t(tile.title) }}</v-card-title>
               <v-card-text>
                 <v-icon size="128">{{ tile.icon }}</v-icon>
               </v-card-text>
@@ -75,10 +74,10 @@
             url: 'food'
           },
           {
-            title: 'Foo',
-            icon: 'person',
-            desc: 'Ting Tang Walla Walla Bing Bang',
-            url: 'food'
+            title: '$vuetify.dashboard.todo',
+            icon: 'list',
+            desc: 'Sweet To-Do List',
+            url: 'todo'
           },
           { title: 'Foo',
             icon: 'person',
