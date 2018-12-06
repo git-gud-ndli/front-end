@@ -9,7 +9,7 @@
               v-for="(item, key) in list.items"
               :key="key"
               avatar
-              @click="revertCheck(key)"
+              @click="revertCheck(item.id, item.checked)"
             >
               <v-list-tile-action>
                 <v-icon v-if="item.checked" color="pink">star</v-icon>
@@ -30,6 +30,7 @@
 
 <script lang="js">
 import GETLIST from "@/graphql/GetTodo.gql";
+import CHECKITEM from "@/graphql/CheckTodo.gql";
   export default  {
     name: 'todo',
     props: [],
@@ -44,17 +45,15 @@ import GETLIST from "@/graphql/GetTodo.gql";
       todo_lists: GETLIST
     },
     methods: {
-      revertCheck(key) {
-        /*
+      revertCheck(uuid, checked) {
         this.$apollo.mutate({
           mutation: CHECKITEM,
           variables: {
-            id: this.todo[key].id,
-            value: !this.todo[key].checked
+            uuid,
+            value: !checked
           }
         });
-        this.$apollo.queries.GETLIST.refetch();
-        */
+        this.$apollo.queries.todo_lists.refetch();
       }
     },
     computed: {
