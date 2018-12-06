@@ -1,5 +1,10 @@
 export default {
   home: {
-    pres: "Keeps you safe and healthy"
+    first: {
+      pres: "Keeps you safe and healthy"
+    },
+    second: {
+      pres: "Our solutions"
+    }
   }
 };
