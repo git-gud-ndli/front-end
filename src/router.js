@@ -6,7 +6,6 @@ import Food from "./views/Food.vue";
 import News from "./views/News.vue";
 import Profile from "./views/Profile.vue";
 import Settings from "./views/Settings.vue";
-import About from "./views/About.vue";
 
 Vue.use(Router);
 
