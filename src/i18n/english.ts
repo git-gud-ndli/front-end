@@ -6,5 +6,12 @@ export default {
     second: {
       pres: "Our solutions"
     }
+  },
+  dashboard: {
+    welcome: "Welcome to your dashboard",
+    profile: "My profile",
+    news: "News",
+    settings: "Settings",
+    food: "Food"
   }
 };
