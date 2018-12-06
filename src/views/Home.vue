@@ -7,7 +7,7 @@
           {{ $vuetify.t("$vuetify.home.first.pres") }}
         </h2>
       </header>
-      
+
     </article>
     <article>
       <header>
@@ -28,7 +28,11 @@
 
 <script>
 export default {
-  components: {}
+  components: {},
+  data() {
+    return {
+    };
+  }
 };
 </script>
 
