@@ -8,9 +8,9 @@
       <v-btn
         slot="activator"
         flat
-      >Register</v-btn>
+        class="topbtn">Register</v-btn>
         <v-card>
-          <v-card-title class="headline light-blue lighten-3" primary-title>
+          <v-card-title class="headline light-blue lighten-3 topbtn" primary-title>
             Register
           </v-card-title>
           <v-card-text>
@@ -80,6 +80,7 @@
 </script>
 
 <style scoped lang="less">
-.login-form {
+.topbtn {
+  padding: 5px 0px;
 }
 </style>

@@ -2,8 +2,8 @@
   <v-app>
     <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span>GIT-GUD(1)</span>
-        <span class="font-weight-light">LA NUIT DE L'INFO</span>
+        <span id="tn">GIT-GUD(1)</span>
+        <span class="font-weight-light" style="margin-left: 20px;">LA NUIT DE L'INFO</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <span v-if="isLogged">
@@ -51,7 +51,8 @@ export default {
 <style>
 @import "./assets/css/style.less";
 
-html, body {
+html,
+body {
   font-family: "coolvetica";
 }
 </style>
