@@ -4,7 +4,7 @@
     <v-container grid-list-xs>
       <v-layout row justify-center>
         <v-flex xs6>
-          <v-list v-for="(list, index) in todo_lists.lists" :key="index">
+          <v-list v-for="(list, index) of todo_lists.lists" :key="index">
             <v-list-tile
               v-for="(item, key) in list.items"
               :key="key"
@@ -39,6 +39,9 @@ import CHECKITEM from "@/graphql/CheckTodo.gql";
     },
     data() {
       return {
+        todo_lists: {
+          lists: []
+        }
       }
     },
     apollo: {
