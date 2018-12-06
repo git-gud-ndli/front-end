@@ -3,6 +3,9 @@ import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Dashboard from "./views/Dashboard.vue";
 import Food from "./views/Food.vue";
+import News from "./views/News.vue";
+import Profile from "./views/Profile.vue";
+import Settings from "./views/Settings.vue";
 import About from "./views/About.vue";
 
 Vue.use(Router);
@@ -25,6 +28,21 @@ export default new Router({
       path: "/dashboard/food",
       name: "food",
       component: Food
+    },
+    {
+      path: "/dashboard/news",
+      name: "news",
+      component: News
+    },
+    {
+      path: "/dashboard/profile",
+      name: "profile",
+      component: Profile
+    },
+    {
+      path: "/dashboard/settings",
+      name: "settings",
+      component: Settings
     },
     {
       path: "/about",
