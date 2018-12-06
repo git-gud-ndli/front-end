@@ -6,8 +6,12 @@
         <span class="font-weight-light">LA NUIT DE L'INFO</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <LoginForm/>
-      <RegisterForm/>
+      <span v-if="isLogged">
+        <v-btn flat @click="logout">Sign Out</v-btn>
+      </span>
+      <span v-else>
+        <NavLinks/>
+      </span>
     </v-toolbar>
 
     <v-content>
@@ -17,18 +21,29 @@
 </template>
 
 <script>
-import LoginForm from "@/components/LoginForm";
-import RegisterForm from "@/components/RegisterForm";
+import NavLinks from "@/components/NavLinks";
+import { mapGetters } from "vuex";
+
 export default {
   name: "App",
   components: {
-    LoginForm,
-    RegisterForm
+    NavLinks
   },
   data() {
     return {
       //
     };
+  },
+  computed: {
+    ...mapGetters({
+      isLogged: "auth/isLoggedIn",
+      user: "auth/user"
+    })
+  },
+  methods: {
+    logout() {
+      this.$store.dispatch("auth/logout");
+    }
   }
 };
 </script>

@@ -1,6 +1,6 @@
 <template lang="html">
 
-  <section class="login-form">
+  <fragment>
     <v-dialog
       v-model="dialog"  
       width="500px"
@@ -54,13 +54,13 @@
           </v-card-actions>
         </v-card>
     </v-dialog>
-  </section>
+  </fragment>
 
 </template>
 
 <script lang="js">
   export default  {
-    name: 'login-form',
+    name: 'register-form',
     props: [],
     mounted() {
 

@@ -1,0 +1,5 @@
+mutation register($user: User!) {
+	authenticate(input:{email: "test", password: "plop"}) {
+  	    jwtToken
+	}
+}

@@ -1,6 +1,6 @@
 <template lang="html">
 
-  <section class="login-form">
+  <fragment>
     <v-dialog
       v-model="dialog"  
       width="500px"
@@ -13,13 +13,12 @@
           <v-card-title class="headline light-blue lighten-3" primary-title>
             Sign In
           </v-card-title>
-          <v-card-text>
-            
-            <form @submit.prevent="dialog = false">
+            <form @submit.prevent="login">
+            <v-card-text>
               <v-layout column>
                 <v-flex>
                   <v-text-field
-                    prepend-icon="person"
+                    prepend-icon="email"
                     name="email"
                     label="Email"
                     id="log_email"
@@ -36,16 +35,16 @@
                     required></v-text-field>
                 </v-flex>
               </v-layout>
-            </form>
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="error" type="submit" @click="dialog = false">Cancel</v-btn>
+            <v-btn color="error" @click="dialog = false">Cancel</v-btn>
             <v-btn color="primary" type="submit">Sign In</v-btn>
           </v-card-actions>
+        </form>
         </v-card>
     </v-dialog>
-  </section>
+  </fragment>
 
 </template>
 
@@ -62,7 +61,15 @@
       }
     },
     methods: {
-
+      login(e) {
+        let email = e.target.elements.email.value;
+        let password = e.target.elements.password.value;
+        this.$store.dispatch("auth/signinUser", {
+          email,
+          password
+        });
+        this.dialog = false;
+      }
     },
     computed: {
 
