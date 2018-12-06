@@ -12,6 +12,14 @@
         <form @submit.prevent="login">
           <v-card-text>
             <v-layout column>
+              <v-alert
+                type="error"
+                :value="true"
+                v-for="(msg, index) of messages"
+                :key="index"
+              >
+                {{ msg }}
+              </v-alert>
               <v-flex>
                 <v-text-field
                   prepend-icon="email"
@@ -54,7 +62,8 @@
     },
     data() {
       return {
-        dialog: false
+        dialog: false,
+        messages: []
       }
     },
     methods: {
@@ -64,8 +73,14 @@
         this.$store.dispatch("auth/signinUser", {
           email,
           password
+        })
+        .then(() => {
+          this.dialog = false;
+        })
+        .catch(() => {
+          this.messages = ["Wrong user / pass !"];
         });
-        this.dialog = false;
+
       }
     },
     computed: {

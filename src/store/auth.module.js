@@ -28,22 +28,26 @@ export const auth = {
   state: initialState,
   actions: {
     signinUser: ({ commit }, payload) => {
-      apolloClient
+      return new Promise((resolve, reject) => {
+        apolloClient
         .mutate({
           mutation: SIGNIN,
           variables: payload
         })
-        .then(({ data }) => {
-          localStorage.setItem("token", data.login);
-          let user = VueJwtDecode.decode(data.login);
+        .then((res) => {
+          localStorage.setItem("token", res.data.login);
+          let user = VueJwtDecode.decode(res.data.login);
           commit("login", {
             name: "John Doe",
             mail: user.email
           });
+          resolve(res);
         })
         .catch(err => {
-          console.error(err);
+          console.log(err);
+          reject(err);
         });
+      });
     },
     registerUser: ({ commit }, payload) => {
       apolloClient
