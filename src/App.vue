@@ -31,8 +31,18 @@ export default {
   },
   data() {
     return {
-      //
+      gps: {
+        lat: 0,
+        long: 0
+      }
     };
+  },
+  created() {
+    navigator.geolocation.getCurrentPosition(location => {
+      this.gps.long = location.coords.longitude;
+      this.gps.lat = location.coords.accuracy;
+	// push au serv ses coordonnées
+    });
   },
   computed: {
     ...mapGetters({
