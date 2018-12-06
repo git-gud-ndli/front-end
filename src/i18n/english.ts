@@ -9,10 +9,11 @@ export default {
   },
   dashboard: {
     welcome: "Welcome to your dashboard",
-    profile: "My profile",
+    profile: "Profile",
     news: "News",
     settings: "Settings",
-    food: "Food"
+    food: "Food",
+    todo: "To-Do"
   },
   pages: {
     food: {

@@ -1,0 +1,3 @@
+mutation checkitem($uuid: String!, $value: Boolean!) {
+  todoCheck(uuid: $uuid, value: $value)
+}
