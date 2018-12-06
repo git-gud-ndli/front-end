@@ -3,17 +3,12 @@
     <article>
       <header>
         <h1>Survivor</h1>
-        <h2>
-          {{ $vuetify.t("$vuetify.home.first.pres") }}
-        </h2>
+        <h2>{{ $vuetify.t("$vuetify.home.first.pres") }}</h2>
       </header>
-      
     </article>
     <article>
       <header>
-        <h1>
-          {{ $vuetify.t("$vuetify.home.second.pres") }}
-        </h1>
+        <h1>{{ $vuetify.t("$vuetify.home.second.pres") }}</h1>
       </header>
       <section>
         <ul>
