@@ -1,5 +1,6 @@
 <template>
   <section class="dashboard text-xs-center">
+    <router-view></router-view>
     <h1 class="display-4">{{ $vuetify.t("$vuetify.dashboard.welcome") }}</h1>
     <v-container grid-list-lg text-xs-center>
       <v-layout row wrap>
@@ -17,7 +18,9 @@
                 <v-icon size="128">{{ tile.icon }}</v-icon>
               </v-card-text>
               <v-card-actions class="justify-center">
-                <v-btn color="success">go</v-btn>
+                <v-btn color="success">
+                  <router-link :to="{ name: 'Food' }">go</router-link>
+                </v-btn>
               </v-card-actions>
             </v-card>
           </v-hover>
