@@ -1,0 +1,8 @@
+fragment List on TodoList {
+  id
+  items {
+    id
+    checked
+    name
+  }
+}
