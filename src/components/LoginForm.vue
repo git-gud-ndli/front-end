@@ -1,40 +1,38 @@
 <template lang="html">
-
   <fragment>
-    <v-dialog
-      v-model="dialog"  
-      width="500px"
-    >
-      <v-btn
-        slot="activator"
-        flat
-      class="topbtn">Sign In</v-btn>
-        <v-card>
-          <v-card-title class="headline light-blue lighten-3 topbtn" primary-title>
-            Sign In
-          </v-card-title>
-            <form @submit.prevent="login">
-            <v-card-text>
-              <v-layout column>
-                <v-flex>
-                  <v-text-field
-                    prepend-icon="email"
-                    name="email"
-                    label="Email"
-                    id="log_email"
-                    type="email"
-                    required></v-text-field>
-                </v-flex>
-                <v-flex>
-                  <v-text-field
-                    prepend-icon="lock"
-                    name="password"
-                    label="Password"
-                    id="log_password"
-                    type="password"
-                    required></v-text-field>
-                </v-flex>
-              </v-layout>
+    <v-dialog v-model="dialog" width="500px">
+      <v-btn slot="activator" flat class="topbtn">Sign In</v-btn>
+      <v-card>
+        <v-card-title
+          class="headline light-blue lighten-3 topbtn"
+          primary-title
+        >
+          Sign In
+        </v-card-title>
+        <form @submit.prevent="login">
+          <v-card-text>
+            <v-layout column>
+              <v-flex>
+                <v-text-field
+                  prepend-icon="email"
+                  name="email"
+                  label="Email"
+                  id="log_email"
+                  type="email"
+                  required
+                ></v-text-field>
+              </v-flex>
+              <v-flex>
+                <v-text-field
+                  prepend-icon="lock"
+                  name="password"
+                  label="Password"
+                  id="log_password"
+                  type="password"
+                  required
+                ></v-text-field>
+              </v-flex>
+            </v-layout>
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
@@ -42,10 +40,9 @@
             <v-btn color="primary" type="submit">Sign In</v-btn>
           </v-card-actions>
         </form>
-        </v-card>
+      </v-card>
     </v-dialog>
   </fragment>
-
 </template>
 
 <script lang="js">

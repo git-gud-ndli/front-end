@@ -1,4 +1,5 @@
 import SIGNIN from "@/graphql/Signin.gql";
+import REGISTER from "@/graphql/Register.gql";
 import { defaultClient as apolloClient } from "@/vue-apollo";
 import VueJwtDecode from "vue-jwt-decode";
 
@@ -36,6 +37,25 @@ export const auth = {
           localStorage.setItem("token", data.login);
           let user = VueJwtDecode.decode(data.login);
           commit("login", {
+            name: "John Doe",
+            mail: user.email
+          });
+        })
+        .catch(err => {
+          console.error(err);
+        });
+    },
+    registerUser: ({ commit }, payload) => {
+      apolloClient
+        .mutate({
+          mutation: REGISTER,
+          variables: payload
+        })
+        .then(({ data }) => {
+          localStorage.setItem("token", data.login);
+          let user = VueJwtDecode.decode(data.login);
+          console.log(user);
+          commit("register", {
             name: "John Doe",
             mail: user.email
           });
