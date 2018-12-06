@@ -13,5 +13,11 @@ export default {
     news: "News",
     settings: "Settings",
     food: "Food"
+  },
+  pages: {
+    food: {
+      title: "Food",
+      content: "Check your food levels here"
+    }
   }
 };
