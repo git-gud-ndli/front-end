@@ -1,7 +1,7 @@
 <template>
   <section class="dashboard text-xs-center">
     <router-view></router-view>
-    <h1 class="display-4" @click="test">
+    <h1 class="display-4">
       {{ $vuetify.t("$vuetify.dashboard.welcome") }}
     </h1>
     <v-container grid-list-lg text-xs-center>
@@ -20,7 +20,7 @@
                 <v-icon size="128">{{ tile.icon }}</v-icon>
               </v-card-text>
               <v-card-actions class="justify-center">
-                <v-btn color="success" @click="test(tile.url)">go</v-btn>
+                <v-btn color="success" @click="rpush(tile.url)">go</v-btn>
               </v-card-actions>
             </v-card>
           </v-hover>
@@ -43,7 +43,7 @@
       }
     },
     methods: {
-      test(page) {
+      rpush(page) {
         this.$router.push(`/dashboard/${page}`);;
       }
     },
@@ -66,7 +66,7 @@
             title: '$vuetify.dashboard.settings',
             icon: 'settings',
             desc: 'Change your app settings here',
-            url: 'food'
+            url: 'settings'
           },
           {
             title: '$vuetify.dashboard.food',

@@ -27,7 +27,7 @@ export default {
     profile: {
       title: "Your profile"
     },
-    Settings: {
+    settings: {
       title: "Settings"
     }
   }
