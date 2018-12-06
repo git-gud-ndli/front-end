@@ -17,6 +17,7 @@
               >{{ $vuetify.t(tile.title) }}</v-card-title>
               <v-card-text>
                 <v-icon size="128">{{ tile.icon }}</v-icon>
+                <p class="subheading">{{ tile.desc }}</p>
               </v-card-text>
               <v-card-actions class="justify-center">
                 <v-btn color="success" @click="rpush(tile.url)">go</v-btn>
