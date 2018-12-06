@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuetify from "vuetify/lib";
-import "vuetify/src/stylus/app.styl";
+import "../stylus/main.styl";
 import en from "@/i18n/english.ts";
 
 Vue.use(
