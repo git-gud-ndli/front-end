@@ -47,3 +47,11 @@ export default {
   }
 };
 </script>
+
+<style>
+@import "./assets/css/style.less";
+
+html, body {
+  font-family: "coolvetica";
+}
+</style>

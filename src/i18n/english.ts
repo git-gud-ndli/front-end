@@ -1,5 +1,5 @@
 export default {
   home: {
-    pres: "test"
+    pres: "Keeps you safe and healthy"
   }
 };

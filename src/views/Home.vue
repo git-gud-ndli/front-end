@@ -1,10 +1,13 @@
 <template>
   <main>
     <article>
-      <h1>Survivor</h1>
-      <h2>
-        {{ $vuetify.t("$vuetify.home.pres") }}
-      </h2>
+      <header>
+        <h1>Survivor</h1>
+        <h2>
+          {{ $vuetify.t("$vuetify.home.pres") }}
+        </h2>
+      </header>
+      
     </article>
   </main>
 </template>
@@ -18,8 +21,13 @@ export default {
 <style lang="less" scoped>
 main {
   article {
-    h1 {
-      font-size: 30px;
+    header {
+      h1 {
+        font-size: 50px;
+      }
+      h2 {
+        font-size: 30px;
+      }
     }
   }
 }
