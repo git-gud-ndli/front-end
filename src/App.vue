@@ -49,22 +49,6 @@ export default {
       language: "en"
     };
   },
-  created() {
-    navigator.geolocation.getCurrentPosition(location => {
-      this.gps.long = location.coords.longitude;
-      this.gps.lat = location.coords.accuracy;
-      // push au serv ses coordonnées
-      Push.create("CA MARCHE", {
-        body: "ça compile donc ça marche",
-        icon: "/img/icons/favicon-32x32.png",
-        timeout: 4000,
-        onClick: function() {
-          window.focus();
-          this.close();
-        }
-      });
-    });
-  },
   computed: {
     ...mapGetters({
       isLogged: "auth/isLoggedIn",
