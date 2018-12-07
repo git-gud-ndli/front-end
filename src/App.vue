@@ -3,37 +3,44 @@
     <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase">
         <span id="tn">GIT-GUD(1)</span>
-        <span class="font-weight-light" style="margin-left: 20px;"
-          >LA NUIT DE L'INFO</span
-        >
+        <span class="font-weight-light" style="margin-left: 20px;">LA NUIT DE L'INFO</span>
         <select v-on:change="changeLang" v-model="language" class="sel">
           <option value="en">🇬🇧</option>
-          <option value="fr">🇫🇷 </option>
+          <option value="fr">🇫🇷</option>
         </select>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <span v-if="isLogged">
-        <v-btn flat @click="dashboard">{{
+        <v-btn flat @click="dashboard">
+          {{
           $vuetify.t("$vuetify.home.dashboard")
-        }}</v-btn>
+          }}
+        </v-btn>
         <v-btn flat @click="logout">Sign Out</v-btn>
       </span>
-      <span v-else> <NavLinks /> </span>
+      <span v-else>
+        <NavLinks/>
+      </span>
     </v-toolbar>
 
-    <v-content> <router-view></router-view> </v-content>
+    <v-content>
+      <back-button v-if="currentPath"/>
+      <router-view></router-view>
+    </v-content>
   </v-app>
 </template>
 
 <script>
 import NavLinks from "@/components/NavLinks";
+import BackButton from "@/components/BackButton";
 import { mapGetters } from "vuex";
 let Push = require("push.js");
 
 export default {
   name: "App",
   components: {
-    NavLinks
+    NavLinks,
+    BackButton
   },
   data() {
     return {
@@ -64,7 +71,10 @@ export default {
     ...mapGetters({
       isLogged: "auth/isLoggedIn",
       user: "auth/user"
-    })
+    }),
+    currentPath() {
+      return this.$route.path.match(/\/dashboard\/.+/);
+    }
   },
   methods: {
     logout() {

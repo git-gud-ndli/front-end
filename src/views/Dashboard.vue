@@ -12,9 +12,11 @@
               :class="`elevation-${hover ? 12 : 2}`"
               @click="rpush(tile.url)"
             >
-              <v-card-title primary-title class="display-3 justify-center">{{
+              <v-card-title primary-title class="display-3 justify-center">
+                {{
                 $vuetify.t(tile.title)
-              }}</v-card-title>
+                }}
+              </v-card-title>
               <v-card-text>
                 <v-icon size="128">{{ tile.icon }}</v-icon>
                 <p class="subheading">{{ tile.desc }}</p>
@@ -76,10 +78,10 @@
             desc: 'Sweet To-Do List',
             url: 'todo'
           },
-          { title: 'Foo',
-            icon: 'person',
-            desc: 'Ting Tang Walla Walla Bing Bang',
-            url: 'food'
+          { title: '$vuetify.dashboard.weather',
+            icon: 'wb_sunny',
+            desc: 'It\'s raining man',
+            url: 'weather'
           }
         ]
       }
@@ -90,6 +92,7 @@
 <style scoped lang="less">
 .dashboard {
   .tile {
+    min-height: 40vh;
     &:hover {
       cursor: pointer;
     }
