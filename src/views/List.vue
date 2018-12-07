@@ -35,7 +35,6 @@
             </v-list-tile-action>
             <v-list-tile-content @click="checkItem(item.id, item.checked)">
               <v-list-tile-title>{{ item.name }}</v-list-tile-title>
-              <v-list-tile-sub-title>Allow notifications</v-list-tile-sub-title>
             </v-list-tile-content>
           </v-list-tile>
       </v-list>
