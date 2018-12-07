@@ -1,6 +1,4 @@
 export default {
-  dashboard: {
-  },
   home: {
     first: {
       pres: "Keeps you safe and healthy"
