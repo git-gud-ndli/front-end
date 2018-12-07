@@ -1,0 +1,8 @@
+query getnew {
+  news {
+    url
+    title
+    publishedAt
+    content
+  }
+}
