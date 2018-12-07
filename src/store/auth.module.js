@@ -56,12 +56,10 @@ export const auth = {
           variables: payload
         })
         .then(({ data }) => {
-          localStorage.setItem("token", data.login);
-          let user = VueJwtDecode.decode(data.login);
-          console.log(user);
+          localStorage.setItem("token", data.register);
+          let user = VueJwtDecode.decode(data.register);
           commit("register", {
-            name: "John Doe",
-            mail: user.email
+            token: data.register
           });
         })
         .catch(err => {
@@ -76,6 +74,10 @@ export const auth = {
   mutations: {
     login(state, user) {
       state.status = { loggedIn: true };
+      state.user = user;
+    },
+    register(state, user) {
+      state.status = {loggedIn: true};
       state.user = user;
     },
     logout(state) {
