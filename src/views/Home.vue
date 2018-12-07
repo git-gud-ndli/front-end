@@ -23,6 +23,16 @@
       </header>
       <section>
         <h2>git link <a href="https://github.com/git-gud-ndli">github</a></h2>
+        <h2>The team:</h2>
+        <ul>
+          <li>Simon Lucas</li>
+          <li>Emilien Bauer</li>
+          <li>Ludovic Muller</li>
+          <li>Guillaume Kessibi</li>
+          <li>Paul Heng</li>
+          <li>Timothee Oliger</li>
+          <li>Quentin Gleich</li>
+        </ul>
       </section>
     </article>
   </main>
