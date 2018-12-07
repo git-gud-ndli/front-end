@@ -9,6 +9,21 @@ import apolloProvider from "./vue-apollo";
 
 Vue.use(Fragment.Plugin);
 Vue.config.productionTip = false;
+Vue.filter('hideCompact', function (value) {
+  if (!value) {
+    return '';
+  }
+  value = value.toString();
+  return value.split('[')[0];
+});
+
+Vue.filter('parseDate', function(value) {
+  if (!value) {
+    return '';
+  }
+  value = value.toString();
+  return value;
+});
 
 new Vue({
   router,
