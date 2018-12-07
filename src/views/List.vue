@@ -80,7 +80,6 @@ import ADDITEM from "@/graphql/AddItem.gql";
             value: !checked
           }
         });
-        this.$apollo.queries.list.refetch();
       },
       addItem() {
         this.$apollo.mutate({
@@ -89,8 +88,10 @@ import ADDITEM from "@/graphql/AddItem.gql";
               id: this.list.id,
               item: { name: this.item_name }
           }
+        })
+        .then(() => {
+          this.$apollo.queries.list.refetch();
         });
-        this.$apollo.queries.list.refetch();
         this.dialog = false;
       }
     },
