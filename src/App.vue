@@ -16,7 +16,7 @@
         <v-btn flat @click="dashboard">
           {{ $vuetify.t("$vuetify.home.dashboard") }}
         </v-btn>
-        <v-btn flat @click="logout">Sign Out</v-btn>
+        <v-btn flat @click="logout">{{ $vuetify.t("$vuetify.signout") }}</v-btn>
       </span>
       <span v-else> <NavLinks /> </span>
     </v-toolbar>
@@ -32,7 +32,6 @@
 import NavLinks from "@/components/NavLinks";
 import BackButton from "@/components/BackButton";
 import { mapGetters } from "vuex";
-let Push = require("push.js");
 
 export default {
   name: "App",

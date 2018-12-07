@@ -2,6 +2,10 @@ query Weather($lat : Float!, $long : Float!) {
   weather(lat: $lat, long: $long) {
     temperature
     humidity
+    ozone
+    icon
+    summary
+    windSpeed
     alerts {
       title
     }
