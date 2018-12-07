@@ -16,6 +16,7 @@
     </v-toolbar>
 
     <v-content>
+      <back-button v-if="currentPath"/>
       <router-view></router-view>
     </v-content>
   </v-app>
@@ -23,13 +24,15 @@
 
 <script>
 import NavLinks from "@/components/NavLinks";
+import BackButton from "@/components/BackButton";
 import { mapGetters } from "vuex";
 let Push = require("push.js");
 
 export default {
   name: "App",
   components: {
-    NavLinks
+    NavLinks,
+    BackButton
   },
   data() {
     return {
@@ -59,7 +62,10 @@ export default {
     ...mapGetters({
       isLogged: "auth/isLoggedIn",
       user: "auth/user"
-    })
+    }),
+    currentPath() {
+      return this.$route.path.match(/\/dashboard\/.+/);
+    }
   },
   methods: {
     logout() {

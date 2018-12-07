@@ -13,7 +13,8 @@ export default {
     news: "News",
     settings: "Settings",
     food: "Food",
-    todo: "To-Do"
+    todo: "To-Do",
+    weather: "Weather"
   },
   pages: {
     food: {
