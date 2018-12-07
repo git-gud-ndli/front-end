@@ -1,5 +1,7 @@
 export default {
   signout: "Signout",
+  signin: "Sign in",
+  register: "Register",
   home: {
     first: {
       pres: "Keeps you safe and healthy"

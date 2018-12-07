@@ -1,13 +1,15 @@
 <template lang="html">
   <fragment>
     <v-dialog v-model="dialog" width="500px">
-      <v-btn slot="activator" flat class="topbtn">Sign In</v-btn>
+      <v-btn slot="activator" flat class="topbtn">
+        {{ $vuetify.t("$vuetify.signin") }}
+      </v-btn>
       <v-card>
         <v-card-title
           class="headline light-blue lighten-3 topbtn"
-          primary-title
+          primary-title style="padding-left: 20px"
         >
-          Sign In
+          {{ $vuetify.t("$vuetify.signin") }}
         </v-card-title>
         <form @submit.prevent="login">
           <v-card-text>

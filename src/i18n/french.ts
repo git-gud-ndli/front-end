@@ -1,5 +1,7 @@
 export default {
   signout: "Deconnexion",
+  signin: "Connexion",
+  register: "Creer un compte",
   home: {
     first: {
       pres: "Restez en securite"
@@ -38,25 +40,25 @@ export default {
   },
   pages: {
     food: {
-      title: "Food",
-      content: "Check your food levels here"
+      title: "Votre nourriture",
+      content: "Vous pouvez verifier votre niveau de nourriture ici"
     },
     news: {
-      title: "News based on your location",
-      content: "The latest news.."
+      title: "Les dernieres actualites basees sur votres position",
+      content: "Les dernieres news.."
     },
 
     profile: {
-      title: "Your profile"
+      title: "Votre profil"
     },
     settings: {
-      title: "Settings"
+      title: "Reglages"
     },
     weather: {
-      title: "Weather",
-      forecast: "Forecast",
-      wind: "Wind Force",
-      more: "All informations"
+      title: "Meteo",
+      forecast: "Bulletin",
+      wind: "Force du vent",
+      more: "Plus d'informations"
     }
   }
 };
