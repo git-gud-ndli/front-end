@@ -13,7 +13,9 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <span v-if="isLogged">
-        <v-btn flat @click="dashboard">Dashboard</v-btn>
+        <v-btn flat @click="dashboard">{{
+          $vuetify.t("$vuetify.home.dashboard")
+        }}</v-btn>
         <v-btn flat @click="logout">Sign Out</v-btn>
       </span>
       <span v-else> <NavLinks /> </span>
