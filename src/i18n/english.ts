@@ -1,13 +1,23 @@
 export default {
   signout: "Signout",
+  signin: "Sign in",
+  register: "Register",
   home: {
     first: {
       pres: "Keeps you safe and healthy"
     },
     dashboard: "Dashboard",
     second: {
-      pres: "Our solutions"
-    }
+      pres: "Our solutions",
+      c1: "Survivor offers a new way of ensuring your next trip will go without a crash.",
+      c2: "We provide a complete set of tools that all fit in your mobile phone",
+      c3: "We have focused on making it the easiest for you so you can focus on the trip 💥",
+      c4: "With our all-in -one app, you can setup and maintain centralized your todo lists, food inventory, check the latest news and it even includes a lightweight weather forecast to always be on the go."
+      
+      },
+      third: {
+        title: "About the project"
+      }
   },
   dashboard: {
     welcome: "Welcome to your dashboard",

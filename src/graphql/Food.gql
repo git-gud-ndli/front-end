@@ -1,0 +1,6 @@
+query Food {
+  food {
+    name
+    amount
+  }
+}
