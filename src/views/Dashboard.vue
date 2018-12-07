@@ -38,7 +38,6 @@
     },
     data() {
       return {
-
       }
     },
     methods: {

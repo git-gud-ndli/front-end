@@ -4,10 +4,18 @@
       <v-toolbar-title class="headline text-uppercase">
         <span id="tn">GIT-GUD(1)</span>
         <span class="font-weight-light" style="margin-left: 20px;">LA NUIT DE L'INFO</span>
+        <select v-on:change="changeLang" v-model="language" class="sel">
+          <option value="en">🇬🇧</option>
+          <option value="fr">🇫🇷</option>
+        </select>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <span v-if="isLogged">
-        <v-btn flat @click="dashboard">Dashboard</v-btn>
+        <v-btn flat @click="dashboard">
+          {{
+          $vuetify.t("$vuetify.home.dashboard")
+          }}
+        </v-btn>
         <v-btn flat @click="logout">Sign Out</v-btn>
       </span>
       <span v-else>
@@ -39,7 +47,8 @@ export default {
       gps: {
         lat: 0,
         long: 0
-      }
+      },
+      language: "en"
     };
   },
   created() {
@@ -74,6 +83,9 @@ export default {
     },
     dashboard() {
       this.$router.push("/dashboard");
+    },
+    changeLang() {
+      this.$vuetify.lang.current = this.language;
     }
   }
 };
@@ -85,5 +97,9 @@ export default {
 html,
 body {
   font-family: "coolvetica";
+}
+.sel {
+  margin-left: 10px;
+  cursor: pointer;
 }
 </style>

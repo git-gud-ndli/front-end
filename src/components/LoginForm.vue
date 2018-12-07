@@ -76,6 +76,7 @@
         })
         .then(() => {
           this.dialog = false;
+          this.$router.push("/dashboard");
         })
         .catch(() => {
           this.messages = ["Wrong user / pass !"];

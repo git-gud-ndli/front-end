@@ -1,8 +1,11 @@
 export default {
+  dashboard: {
+  },
   home: {
     first: {
       pres: "Keeps you safe and healthy"
     },
+    dashboard: "Dashboard",
     second: {
       pres: "Our solutions"
     }
