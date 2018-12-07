@@ -64,6 +64,10 @@
         this.$store.dispatch("auth/registerUser", {
           email,
           password
+        }).then(() => {
+          this.$router.push("/dashboard");
+        }).catch(() => {
+
         });
         this.dialog = false;
       }
@@ -77,5 +81,8 @@
 <style scoped lang="less">
 .topbtn {
   padding: 5px 0px;
+}
+.headline {
+  padding-left: 15px;
 }
 </style>
