@@ -12,10 +12,9 @@
               :class="`elevation-${hover ? 12 : 2}`"
               @click="rpush(tile.url)"
             >
-              <v-card-title
-                primary-title
-                class="display-3 justify-center"
-              >{{ $vuetify.t(tile.title) }}</v-card-title>
+              <v-card-title primary-title class="display-3 justify-center">{{
+                $vuetify.t(tile.title)
+              }}</v-card-title>
               <v-card-text>
                 <v-icon size="128">{{ tile.icon }}</v-icon>
                 <p class="subheading">{{ tile.desc }}</p>

@@ -1,4 +1,5 @@
 import SIGNIN from "@/graphql/Signin.gql";
+import REGISTER from "@/graphql/Register.gql";
 import { defaultClient as apolloClient } from "@/vue-apollo";
 import VueJwtDecode from "vue-jwt-decode";
 
@@ -48,6 +49,23 @@ export const auth = {
         });
       });
     },
+    registerUser: ({ commit }, payload) => {
+      apolloClient
+        .mutate({
+          mutation: REGISTER,
+          variables: payload
+        })
+        .then(({ data }) => {
+          localStorage.setItem("token", data.register);
+          let user = VueJwtDecode.decode(data.register);
+          commit("register", {
+            token: data.register
+          });
+        })
+        .catch(err => {
+          console.error(err);
+        });
+    },
     logout({ commit }) {
       localStorage.removeItem("token");
       commit("logout");
@@ -56,6 +74,10 @@ export const auth = {
   mutations: {
     login(state, user) {
       state.status = { loggedIn: true };
+      state.user = user;
+    },
+    register(state, user) {
+      state.status = {loggedIn: true};
       state.user = user;
     },
     logout(state) {
