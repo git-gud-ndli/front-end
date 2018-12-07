@@ -2,6 +2,7 @@ import Vue from "vue";
 import Vuetify from "vuetify/lib";
 import "../stylus/main.styl";
 import en from "@/i18n/english.ts";
+import fr from "@/i18n/french.ts";
 
 Vue.use(
   Vuetify,
@@ -9,7 +10,8 @@ Vue.use(
     iconfont: "md",
     lang: {
       locales: {
-        en
+        en,
+        fr
       }
     }
   },
