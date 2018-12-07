@@ -1,10 +1,14 @@
 <template>
   <section id="food">
     <h1>{{ $vuetify.t("$vuetify.pages.food.title") }}</h1>
-    {{ food }}
-    <v-list-tile v-for="item in food" :key="item.name">
-      <p>{{ item.name }}</p>
-    </v-list-tile>
+    <v-list>
+      <v-list-tile @click="" v-for="(item, index) of food" :key="index">
+        <v-list-tile-content>
+          <v-list-tile-title>{{ item.name }}</v-list-tile-title>
+          <v-list-tile-sub-title>{{ item.amount }}</v-list-tile-sub-title>
+        </v-list-tile-content>
+      </v-list-tile>
+    </v-list>
   </section>
 </template>
 
