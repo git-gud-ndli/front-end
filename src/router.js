@@ -8,6 +8,7 @@ import Food from "./views/Food.vue";
 import News from "./views/News.vue";
 import Profile from "./views/Profile.vue";
 import Settings from "./views/Settings.vue";
+import List from "./views/List.vue";
 
 Vue.use(Router);
 
@@ -32,6 +33,14 @@ let router = new Router({
       path: "/dashboard/todo",
       name: "todo",
       component: Todo,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/dashboard/todo/:id",
+      name: "list",
+      component: List,
       meta: {
         requiresAuth: true
       }

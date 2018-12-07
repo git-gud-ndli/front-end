@@ -1,8 +1,8 @@
-#import "./ListFragment.gql"
 query getlist {
   todo_lists: me {
     lists{
-      ...List
+      id
+      name
     }
   }
 }

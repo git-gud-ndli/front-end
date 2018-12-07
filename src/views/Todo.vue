@@ -1,27 +1,47 @@
 <template>
   <section class="todo">
-    <h1 class="display-4 text-xs-center">To-do list</h1>
-    <v-container grid-list-xs>
+    <h1 class="display-4 text-xs-center">To-do lists</h1>
+    <v-container grid-list-md>
       <v-layout row justify-center>
-        <v-flex xs6>
-          <v-list v-for="(list, index) of todo_lists.lists" :key="index">
-            <v-list-tile
-              v-for="(item, key) in list.items"
-              :key="key"
-              avatar
-              @click="revertCheck(item.id, item.checked)"
-            >
-              <v-list-tile-action>
-                <v-icon v-if="item.checked" color="pink">star</v-icon>
-              </v-list-tile-action>
+        <!-- <v-btn color="success">Create a list</v-btn> -->
+        <v-dialog v-model="dialog" width="500">
+          <v-btn slot="activator" color="red lighten-2" dark>Create a list</v-btn>
 
-              <v-list-tile-content>
-                <v-list-tile-title v-text="item.name"></v-list-tile-title>
-              </v-list-tile-content>
+          <v-card>
+            <v-card-title class="headline grey lighten-2" primary-title>Create a list</v-card-title>
 
-              <v-list-tile-avatar></v-list-tile-avatar>
-            </v-list-tile>
-          </v-list>
+            <v-card-text>
+              <v-text-field
+                v-model="list_name"
+                name="name"
+                label="List name"
+                id="inputName"
+                placeholder="List Name"
+              ></v-text-field>
+            </v-card-text>
+
+            <v-divider></v-divider>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn color="primary" flat @click="createList">Create List</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+      </v-layout>
+      <v-layout row wrap>
+        <v-flex v-for="(list, index) of todo_lists.lists" :key="index" xs4>
+          <v-card>
+            <v-card-title primary-title>{{ list.name }}</v-card-title>
+            <v-card-text>
+              <p>hrjkbzhgjoezopkg neziugietrot</p>
+            </v-card-text>
+            <v-card-actions>
+              <v-btn flat :to="`todo/${list.id}`">Access list</v-btn>
+              <v-spacer></v-spacer>
+              <v-btn flat>Delete</v-btn>
+            </v-card-actions>
+          </v-card>
         </v-flex>
       </v-layout>
     </v-container>
@@ -30,7 +50,7 @@
 
 <script lang="js">
 import GETLIST from "@/graphql/GetTodo.gql";
-import CHECKITEM from "@/graphql/CheckTodo.gql";
+import ADDLIST from "@/graphql/AddList.gql";
   export default  {
     name: 'todo',
     props: [],
@@ -41,22 +61,24 @@ import CHECKITEM from "@/graphql/CheckTodo.gql";
       return {
         todo_lists: {
           lists: []
-        }
+        },
+        dialog: false,
+        list_name: ''
       }
     },
     apollo: {
       todo_lists: GETLIST
     },
     methods: {
-      revertCheck(uuid, checked) {
+      createList() {
         this.$apollo.mutate({
-          mutation: CHECKITEM,
+          mutation: ADDLIST,
           variables: {
-            uuid,
-            value: !checked
+              name: this.list_name
           }
         });
         this.$apollo.queries.todo_lists.refetch();
+        this.dialog = false;
       }
     },
     computed: {

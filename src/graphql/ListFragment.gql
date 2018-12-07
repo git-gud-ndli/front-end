@@ -1,5 +1,6 @@
 fragment List on TodoList {
   id
+  name
   items {
     id
     checked
