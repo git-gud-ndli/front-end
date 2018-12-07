@@ -21,6 +21,9 @@
       <header>
         <h1>{{ $vuetify.t("$vuetify.home.third.title") }}</h1>
       </header>
+      <section>
+        <h2>git link <a href="https://github.com/git-gud-ndli">github</a></h2>
+      </section>
     </article>
   </main>
 </template>
