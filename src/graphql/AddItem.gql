@@ -1,0 +1,5 @@
+mutation additem($id: String!, $item: TodoItemParam!) {
+  createTodoItem(listId: $id, item: $item) {
+    id
+  }
+}

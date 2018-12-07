@@ -1,0 +1,6 @@
+#import "./ListFragment.gql"
+query getlist($id: String) {
+  list: todoList(id: $id) {
+    ...List
+  }
+}
