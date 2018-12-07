@@ -8,7 +8,18 @@ export default {
     },
     dashboard: "Dashboard",
     second: {
-      pres: "Nos solutions"
+      pres: "Nos solutions",
+      c1:
+        "Survivor offre une nouvelle maniere d'assurer que vos voyages se passeront toujours de la meilleure maniere qu'il soit.",
+      c2:
+        "Nous proposons un couteau suisse d'outils indispensable a tout bon aventurier",
+      c3:
+        "Nous avons pense notre solutions pour quelle soit la plus simple et rapide d'apprentissage 💥",
+      c4:
+        "Avec notre app tout-en-un, vous pouvez mettre en place et entretenir des listes de choses a faires, votre inventaire de nourriture, lire les dernieres news et meme checker un bulletin meteo rapidement, pour toujours etre dans l'action."
+    },
+    third: {
+      title: "A propos du projet"
     }
   },
   dashboard: {

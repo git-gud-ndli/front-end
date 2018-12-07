@@ -10,13 +10,17 @@
       <header>
         <h1>{{ $vuetify.t("$vuetify.home.second.pres") }}</h1>
       </header>
-      <section>
-        <ul>
-          <li>whatever</li>
-          <li>whatever</li>
-          <li>whatever</li>
-        </ul>
+      <section id="adv">
+        <p>{{ $vuetify.t("$vuetify.home.second.c1") }}</p>
+        <p>{{ $vuetify.t("$vuetify.home.second.c2") }}</p>
+        <p>{{ $vuetify.t("$vuetify.home.second.c3") }}</p>
+        <p>{{ $vuetify.t("$vuetify.home.second.c4") }}</p>
       </section>
+    </article>
+    <article id="about">
+      <header>
+        <h1>{{ $vuetify.t("$vuetify.home.third.title") }}</h1>
+      </header>
     </article>
   </main>
 </template>
@@ -31,6 +35,14 @@ export default {
 main {
   #desert {
     background: url("../assets/desert.jpg");
+  }
+
+  #adv {
+    max-width: 900px;
+    margin: 0 auto;
+    p {
+      font-size: 20px;
+    }
   }
 
   article {

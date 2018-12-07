@@ -2,9 +2,8 @@
   <v-app>
     <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span id="tn">GIT-GUD(1)</span>
-        <span class="font-weight-light" style="margin-left: 20px;"
-          >LA NUIT DE L'INFO</span
+        <router-link :to="{ name: 'home' }" id="tn" tag="button"
+          >GIT-GUD(1) - Nuit de L'Info</router-link
         >
         <select v-on:change="changeLang" v-model="language" class="sel">
           <option value="en">🇬🇧</option>
@@ -87,6 +86,9 @@ export default {
 html,
 body {
   font-family: "coolvetica";
+}
+#tn {
+  color: #616183;
 }
 .sel {
   margin-left: 10px;
