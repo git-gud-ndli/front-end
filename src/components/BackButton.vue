@@ -1,7 +1,5 @@
 <template>
-  <fragment>
-    <v-btn color="secondary" @click="goBack">❮ Back</v-btn>
-  </fragment>
+  <fragment> <v-btn color="secondary" @click="goBack">❮ Back</v-btn> </fragment>
 </template>
 
 <script lang="js">

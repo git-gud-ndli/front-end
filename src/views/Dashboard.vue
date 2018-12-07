@@ -13,9 +13,7 @@
               @click="rpush(tile.url)"
             >
               <v-card-title primary-title class="display-3 justify-center">
-                {{
-                $vuetify.t(tile.title)
-                }}
+                {{ $vuetify.t(tile.title) }}
               </v-card-title>
               <v-card-text>
                 <v-icon size="128">{{ tile.icon }}</v-icon>

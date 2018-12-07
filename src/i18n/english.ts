@@ -32,6 +32,9 @@ export default {
     },
     settings: {
       title: "Settings"
+    },
+    weather: {
+      title: "Weather"
     }
   }
 };

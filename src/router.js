@@ -6,6 +6,7 @@ import Dashboard from "./views/Dashboard.vue";
 import Todo from "./views/Todo.vue";
 import Food from "./views/Food.vue";
 import News from "./views/News.vue";
+import Weather from "./views/Weather.vue";
 import Profile from "./views/Profile.vue";
 import Settings from "./views/Settings.vue";
 
@@ -48,6 +49,14 @@ let router = new Router({
       path: "/dashboard/news",
       name: "news",
       component: News,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/dashboard/weather",
+      name: "weather",
+      component: Weather,
       meta: {
         requiresAuth: true
       }
