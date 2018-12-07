@@ -1,6 +1,8 @@
 <template>
   <section id="profile">
-    <h1><u>{{ $vuetify.t("$vuetify.pages.profile.title") }}</u></h1>
+    <h1>
+      <u>{{ $vuetify.t("$vuetify.pages.profile.title") }}</u>
+    </h1>
     <v-container>
       <h2>My UUID: {{ me.id }}</h2>
       <br />

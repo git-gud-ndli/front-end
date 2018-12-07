@@ -53,10 +53,10 @@ export default {
       title: "Settings"
     },
     weather: {
-    title: "Weather",
-    forecast: "Forecast",
-    wind: "Wind Force",
-    more: "All informations"
+      title: "Weather",
+      forecast: "Forecast",
+      wind: "Wind Force",
+      more: "All informations"
     }
   }
 };

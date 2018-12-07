@@ -66,8 +66,17 @@ export default {
       this.$router.push("/dashboard");
     },
     changeLang() {
+      localStorage.setItem("lang", this.language);
       this.$vuetify.lang.current = this.language;
     }
+  },
+  mounted() {
+    if (localStorage.getItem("lang") === null) {
+      this.language = "en";
+      localStorage.setItem("lang", this.language);
+    }
+    this.language = localStorage.getItem("lang");
+    this.$vuetify.lang.current = this.language;
   }
 };
 </script>
