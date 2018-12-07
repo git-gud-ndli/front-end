@@ -19,7 +19,7 @@ if (token) {
         name: "John Doe",
         email: decode.email
       }
-    }
+    };
   }
 }
 
@@ -30,41 +30,44 @@ export const auth = {
     signinUser: ({ commit }, payload) => {
       return new Promise((resolve, reject) => {
         apolloClient
-        .mutate({
-          mutation: SIGNIN,
-          variables: payload
-        })
-        .then((res) => {
-          localStorage.setItem("token", res.data.login);
-          let user = VueJwtDecode.decode(res.data.login);
-          commit("login", {
-            name: "John Doe",
-            mail: user.email
+          .mutate({
+            mutation: SIGNIN,
+            variables: payload
+          })
+          .then(res => {
+            localStorage.setItem("token", res.data.login);
+            let user = VueJwtDecode.decode(res.data.login);
+            commit("login", {
+              name: "John Doe",
+              mail: user.email
+            });
+            resolve(res);
+          })
+          .catch(err => {
+            console.log(err);
+            reject(err);
           });
-          resolve(res);
-        })
-        .catch(err => {
-          console.log(err);
-          reject(err);
-        });
       });
     },
     registerUser: ({ commit }, payload) => {
-      apolloClient
-        .mutate({
-          mutation: REGISTER,
-          variables: payload
-        })
-        .then(({ data }) => {
-          localStorage.setItem("token", data.register);
-          let user = VueJwtDecode.decode(data.register);
-          commit("register", {
-            token: data.register
+      return new Promise((resolve, reject) => {
+        apolloClient
+          .mutate({
+            mutation: REGISTER,
+            variables: payload
+          })
+          .then(({ data }) => {
+            localStorage.setItem("token", data.register);
+            let user = VueJwtDecode.decode(data.register);
+            commit("register", {
+              token: data.register
+            });
+            resolve("ok");
+          })
+          .catch(err => {
+            reject(err);
           });
-        })
-        .catch(err => {
-          console.error(err);
-        });
+      });
     },
     logout({ commit }) {
       localStorage.removeItem("token");
@@ -77,7 +80,7 @@ export const auth = {
       state.user = user;
     },
     register(state, user) {
-      state.status = {loggedIn: true};
+      state.status = { loggedIn: true };
       state.user = user;
     },
     logout(state) {
