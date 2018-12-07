@@ -33,9 +33,7 @@
         <v-flex v-for="(list, index) of todo_lists.lists" :key="index" xs4>
           <v-card>
             <v-card-title primary-title>{{ list.name }}</v-card-title>
-            <v-card-text>
-              <p>hrjkbzhgjoezopkg neziugietrot</p>
-            </v-card-text>
+            <v-card-text></v-card-text>
             <v-card-actions>
               <v-btn flat :to="`todo/${list.id}`">Access list</v-btn>
               <v-spacer></v-spacer>
@@ -76,8 +74,10 @@ import ADDLIST from "@/graphql/AddList.gql";
           variables: {
               name: this.list_name
           }
+        })
+        .then(() => {
+          this.$apollo.queries.todo_lists.refetch();
         });
-        this.$apollo.queries.todo_lists.refetch();
         this.dialog = false;
       }
     },

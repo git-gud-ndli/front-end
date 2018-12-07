@@ -21,7 +21,6 @@ const authLink = setContext((_, { headers }) => {
     headers: {
       ...headers,
       authorization: token ? `Bearer ${token}` : "",
-      "x-forwarded-for": "130.79.0.138"
     }
   };
 });
