@@ -10,12 +10,30 @@ export default {
   },
   dashboard: {
     welcome: "Welcome to your dashboard",
-    profile: "Profile",
-    news: "News",
-    settings: "Settings",
-    food: "Food",
-    todo: "To-Do",
-    weather: "Weather"
+    profile: {
+      title: "Profile",
+      desc: "Update your personnal informations here"
+    },
+    news: {
+      title: "News",
+      desc: "Check the news near you"
+    },
+    settings: {
+      title: "Settings",
+      desc: "Change your app settings here"
+    },
+    food: {
+      title: "Food",
+      desc: "Manage your food here"
+    },
+    todo: {
+      title: "To-Do",
+      desc: "Consult your To-Do lists"
+    },
+    weather: {
+      title: "Weather",
+      desc: "Check the weather"
+    }
   },
   pages: {
     food: {

@@ -19,7 +19,7 @@
               </v-card-title>
               <v-card-text>
                 <v-icon size="128">{{ tile.icon }}</v-icon>
-                <p class="subheading">{{ tile.desc }}</p>
+                <p class="subheading">{{ $vuetify.t(tile.desc) }}</p>
               </v-card-text>
             </v-card>
           </v-hover>
@@ -49,38 +49,38 @@
       tiles() {
         return [
           {
-            title: "$vuetify.dashboard.profile",
+            title: "$vuetify.dashboard.profile.title",
             icon: 'person',
-            desc: 'Update your personnal informations here',
+            desc: "$vuetify.dashboard.profile.desc",
             url: 'profile'
           },
           {
-            title: '$vuetify.dashboard.news',
+            title: '$vuetify.dashboard.news.title',
             icon: 'library_books',
-            desc: 'Check the news near you',
+            desc: '$vuetify.dashboard.news.desc',
             url: 'news'
           },
           {
-            title: '$vuetify.dashboard.settings',
+            title: '$vuetify.dashboard.settings.title',
             icon: 'settings',
-            desc: 'Change your app settings here',
+            desc: '$vuetify.dashboard.settings.desc',
             url: 'settings'
           },
           {
-            title: '$vuetify.dashboard.food',
+            title: '$vuetify.dashboard.food.title',
             icon: 'fastfood',
-            desc: 'Ting Tang Walla Walla Bing Bang',
+            desc: '$vuetify.dashboard.food.desc',
             url: 'food'
           },
           {
-            title: '$vuetify.dashboard.todo',
+            title: '$vuetify.dashboard.todo.title',
             icon: 'list',
-            desc: 'Sweet To-Do List',
+            desc: '$vuetify.dashboard.todo.desc',
             url: 'todo'
           },
-          { title: '$vuetify.dashboard.weather',
+          { title: '$vuetify.dashboard.weather.title',
             icon: 'wb_sunny',
-            desc: 'It\'s raining man',
+            desc: '$vuetify.dashboard.weather.desc',
             url: 'weather'
           }
         ]
