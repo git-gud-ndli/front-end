@@ -1,0 +1,5 @@
+mutation addlist($name: String!) {
+  createTodoList(name: $name, items:[]) {
+    id
+  }
+}
