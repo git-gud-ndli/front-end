@@ -8,8 +8,9 @@
           <v-hover>
             <v-card
               slot-scope="{ hover }"
-              class="text-xs-center"
+              class="text-xs-center tile"
               :class="`elevation-${hover ? 12 : 2}`"
+              @click="rpush(tile.url)"
             >
               <v-card-title
                 primary-title
@@ -19,9 +20,6 @@
                 <v-icon size="128">{{ tile.icon }}</v-icon>
                 <p class="subheading">{{ tile.desc }}</p>
               </v-card-text>
-              <v-card-actions class="justify-center">
-                <v-btn color="success" @click="rpush(tile.url)">go</v-btn>
-              </v-card-actions>
             </v-card>
           </v-hover>
         </v-flex>
@@ -93,5 +91,10 @@
 
 <style scoped lang="less">
 .dashboard {
+  .tile {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 </style>

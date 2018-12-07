@@ -3,18 +3,21 @@
     <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase">
         <span id="tn">GIT-GUD(1)</span>
-        <span class="font-weight-light" style="margin-left: 20px;"
-          >LA NUIT DE L'INFO</span
-        >
+        <span class="font-weight-light" style="margin-left: 20px;">LA NUIT DE L'INFO</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <span v-if="isLogged">
+        <v-btn flat @click="dashboard">Dashboard</v-btn>
         <v-btn flat @click="logout">Sign Out</v-btn>
       </span>
-      <span v-else> <NavLinks /> </span>
+      <span v-else>
+        <NavLinks/>
+      </span>
     </v-toolbar>
 
-    <v-content> <router-view></router-view> </v-content>
+    <v-content>
+      <router-view></router-view>
+    </v-content>
   </v-app>
 </template>
 
@@ -61,6 +64,9 @@ export default {
   methods: {
     logout() {
       this.$store.dispatch("auth/logout");
+    },
+    dashboard() {
+      this.$router.push("/dashboard");
     }
   }
 };

@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
+import store from "./store";
 import Home from "./views/Home.vue";
 import Dashboard from "./views/Dashboard.vue";
 import Todo from "./views/Todo.vue";
@@ -10,7 +11,7 @@ import Settings from "./views/Settings.vue";
 
 Vue.use(Router);
 
-export default new Router({
+let router = new Router({
   mode: "history",
   base: process.env.BASE_URL,
   routes: [
@@ -22,32 +23,50 @@ export default new Router({
     {
       path: "/dashboard",
       name: "dashboard",
-      component: Dashboard
+      component: Dashboard,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: "/dashboard/todo",
       name: "todo",
-      component: Todo
+      component: Todo,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: "/dashboard/food",
       name: "food",
-      component: Food
+      component: Food,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: "/dashboard/news",
       name: "news",
-      component: News
+      component: News,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: "/dashboard/profile",
       name: "profile",
-      component: Profile
+      component: Profile,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: "/dashboard/settings",
       name: "settings",
-      component: Settings
+      component: Settings,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: "/about",
@@ -60,3 +79,17 @@ export default new Router({
     }
   ]
 });
+
+router.beforeEach((to, from, next) =>  {
+  if(to.matched.some(record => record.meta.requiresAuth)) {
+    if (!store.getters['auth/isLoggedIn']) {
+      next({ name: 'home'});
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
+});
+
+export default router;
