@@ -4,7 +4,7 @@
       <h1>{{ $vuetify.t("$vuetify.pages.news.title") }}</h1>
       <v-timeline>
         <v-timeline-item v-for="(article, index) in news" :key="index" color="red lighten-2" large>
-          <span slot="opposite">{{ article.publishedAt}}</span>
+          <span slot="opposite">{{ article.publishedAt | moment("DD / MM / YYYY - HH:mm") }}</span>
           <a :href="article.url" target="_blank" rel="noopener noreferrer">
             <v-hover>
               <v-card
