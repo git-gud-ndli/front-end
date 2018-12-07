@@ -19,7 +19,7 @@
                   prepend-icon="email"
                   name="email"
                   label="Email"
-                  id="log_email"
+                  id="reg_email"
                   type="email"
                   required
                 ></v-text-field>
@@ -29,7 +29,7 @@
                   prepend-icon="lock"
                   name="password"
                   label="Password"
-                  id="log_password"
+                  id="reg_password"
                   type="password"
                   required
                 ></v-text-field>
