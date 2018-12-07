@@ -55,7 +55,7 @@ export default {
       content: "Vous pouvez verifier votre niveau de nourriture ici"
     },
     news: {
-      title: "Les dernieres actualites basees sur votres position",
+      title: "Les dernieres actualites basees sur votre position",
       content: "Les dernieres news.."
     },
 
