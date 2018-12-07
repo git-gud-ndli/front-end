@@ -1,10 +1,12 @@
 <template>
   <section id="profile">
-    <h1>{{ $vuetify.t("$vuetify.pages.profile.title") }}</h1>
+    <h1>
+      <u>{{ $vuetify.t("$vuetify.pages.profile.title") }}</u>
+    </h1>
     <v-container>
-      <p>Uuid: {{ me.id }}</p>
+      <h2>My UUID: {{ me.id }}</h2>
       <br />
-      <p>Username: {{ me.username }}</p>
+      <h2>Registration email: {{ me.username }}</h2>
     </v-container>
   </section>
 </template>
@@ -15,7 +17,7 @@ export default {
   name: "Profile",
   data() {
     return {
-      me: { id: "none", username: "Yve" }
+      me: { id: "none", username: "Yves" }
     };
   },
   apollo: {

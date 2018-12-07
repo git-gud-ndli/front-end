@@ -1,4 +1,5 @@
 export default {
+  signout: "Signout",
   home: {
     first: {
       pres: "Keeps you safe and healthy"
@@ -41,7 +42,7 @@ export default {
       content: "Check your food levels here"
     },
     news: {
-      title: "News",
+      title: "News based on your location",
       content: "The latest news.."
     },
 
@@ -50,6 +51,12 @@ export default {
     },
     settings: {
       title: "Settings"
+    },
+    weather: {
+      title: "Weather",
+      forecast: "Forecast",
+      wind: "Wind Force",
+      more: "All informations"
     }
   }
 };

@@ -7,7 +7,10 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 
 const httpLink = new HttpLink({
   // You should use an absolute URL here
-  uri: process.env.VUE_APP_GRAPHQL_ENDPOINT
+  uri:
+    window.endpoint && window.endpoint != "$GRAPHQL_ENDPOINT"
+      ? window.endpoint
+      : process.env.VUE_APP_GRAPHQL_ENDPOINT
 });
 
 const authLink = setContext((_, { headers }) => {
